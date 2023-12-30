@@ -2,7 +2,7 @@
 name = "gpt-snippet-generator"
 version = "0.1.0"
 description = ""
-authors = ["alejoboga-ai <alejo@zelta.ai>"]
+authors = ["alejoboga20 <alejoboga19@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
