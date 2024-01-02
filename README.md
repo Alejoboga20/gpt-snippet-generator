@@ -8,6 +8,12 @@ This is a simple CLI tool to generate code snippets from a given text using GPT.
 poetry install
 ```
 
+Fill the environment variables in `.env` file.
+
+```
+OPENAI_API_KEY=
+```
+
 ## Usage
 
 1. Initiate the virtual environment
