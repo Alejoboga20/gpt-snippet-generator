@@ -1,6 +1,13 @@
+import argparse
+
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--task', default="print a hello world")
+parser.add_argument('--language', default="python")
+args = parser.parse_args()
 
 api_key = ""
 
@@ -9,8 +16,8 @@ llm = OpenAI(
 )
 
 code_prompt = PromptTemplate(
-    template="Write a very short {language} function that will {task}",
-    input_variables=['language', 'task']
+    input_variables=['language', 'task'],
+    template="Write a very short {language} function that will {task}"
 )
 
 code_chain = LLMChain(
@@ -20,8 +27,8 @@ code_chain = LLMChain(
 
 # Generate text
 result = code_chain({
-    'language': 'python',
-    'task': 'print Hello World'
+    'language': args.language,
+    'task': args.task
 })
 
 print(result['text'])
